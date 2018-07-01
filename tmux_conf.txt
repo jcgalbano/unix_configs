@@ -1,0 +1,27 @@
+# remap prefix from 'C-b' to 'C-a'
+unbind C-b
+set-optio -g prefix C-a
+bind-key C-a send-prefix
+
+# split panes using | and -
+bind-key v split-window -h
+bind-key s split-window -v
+unbind '"'
+unbind %
+
+# reload config file (change file location to your the tmux.conf you want to use)
+bind r source-file ~/.tmux.conf
+
+# use vim-like keys for splits and windows
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+# use C-vim keys for resizing panes
+bind -r C-k resize-pane -U
+bind -r C-j resize-pane -D
+bind -r C-h resize-pane -L
+bind -r C-l resize-pane -R
+# Enable mouse mode (tmux 2.1 and above)
+set -g mouse on

@@ -1,0 +1,45 @@
+set nocompatible
+filetype off
+
+" Initilizes path for Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+" Calls Vundle
+call vundle#begin()
+
+" Plugins
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'dracula/vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ctrlpvim/ctrlp.vim'
+call vundle#end()
+
+" Makes Ctrl + h/j/k/l for traversing panes in nerd tree
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Makes Ctrl + n for activating NerdTree
+map <C-n> :NERDTreeToggle<CR>
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Configures and Activates solarized coloscheme 
+set t_Co=256
+set background=dark
+colorscheme dracula
+set number
+syntax on
+imap jj <Esc>
+
+" For making tab produce 4 spaces instead of a tab character
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+" Activates AirLine
+set laststatus=2
+" Mouse integration
+set mouse=a
