@@ -16,6 +16,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dracula/vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'slim-template/vim-slim.git'
+Plugin 'kchmck/vim-coffee-script'
 call vundle#end()
 
 " Makes Ctrl + h/j/k/l for traversing panes in nerd tree
@@ -29,9 +32,8 @@ map <C-n> :NERDTreeToggle<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Configures and Activates solarized coloscheme 
+" Configures and Activates solarized coloscheme
 set t_Co=256
-set background=dark
 colorscheme dracula
 set number
 syntax on
@@ -45,3 +47,9 @@ set tabstop=2 shiftwidth=2 expandtab
 set laststatus=2
 " Mouse integration
 set mouse=a
+let NERDTreeShowHidden=1
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
