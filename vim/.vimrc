@@ -39,6 +39,11 @@ syntax on
 " Maps ESC to consecutive JJ for faster escapes from INSERT mode
 imap jj <Esc>
 
+" Reset the background color in Normal mode so vim uses Terminal.app's background color"
+highlight Normal ctermbg=none
+" Reset the background color in Non Text area so vim uses Terminal.app's background color"
+highlight NonText ctermbg=none
+
 " For making tab produce 4 spaces instead of a tab character
 " set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set tabstop=2 shiftwidth=2 expandtab
