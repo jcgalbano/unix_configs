@@ -1,25 +1,21 @@
 set nocompatible
 filetype off
 
-" Initilizes path for Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-" Calls Vundle
-call vundle#begin()
+" Updated to vim-plug
+call plug#begin()
 
-" Plugins
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'dracula/vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'slim-template/vim-slim.git'
-Plugin 'kchmck/vim-coffee-script'
-call vundle#end()
+Plug 'VundleVim/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dracula/vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'kchmck/vim-coffee-script'
+
+call plug#end()
 
 " Makes Ctrl + h/j/k/l for traversing panes in nerd tree
 nnoremap <C-h> <C-w>h
