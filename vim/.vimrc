@@ -28,11 +28,15 @@ map <C-n> :NERDTreeToggle<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Configures and Activates solarized coloscheme
+" Sets colors to use 256 bits
 set t_Co=256
+" Sets the colorscheme
 colorscheme dracula
+" Shows the line numbers
 set number
+" Turns syntax highlighting ON
 syntax on
+" Maps ESC to consecutive JJ for faster escapes from INSERT mode
 imap jj <Esc>
 
 " For making tab produce 4 spaces instead of a tab character
